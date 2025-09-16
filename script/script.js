@@ -4,6 +4,7 @@ const winLabel = document.getElementById("win"),
     looseLabel = document.getElementById("loose"), 
     drawLabel = document.getElementById("draw");
 const resultLabel = document.getElementById("resultat");
+const resetBtn = document.getElementById("resetBtn");
 
 // const name items
 const win = "win", draw = "draw", loose = "loose";
@@ -43,8 +44,8 @@ function updateScore() {
 
 // tell wath has been played
 function tellWthPlayed(player, robot, result) {
-    const strResult = result == win ? "Vous avez gagné." : result == loose ? "Vous avez perdus." : "C'était un match null."
-    resultLabel.innerHTML = "Vous avez joué : " + player + ". Le robot a joué: " + robot + ". " + strResult;
+    const strResult = result == win ? "Vous avez <strong>gagné</strong>." : result == loose ? "Vous avez <strong>perdus</strong>." : "C'était un <strong>match null</strong>."
+    resultLabel.innerHTML = "Vous avez joué : <strong>" + player + "</strong>. Le robot a joué: <strong>" + robot + "</strong>. " + strResult;
 }
 
 // principal function for the buttons
@@ -60,4 +61,13 @@ function buttonHandler(button) {
 
 buttons.forEach(button => {
     button.addEventListener('click', () => buttonHandler(button));
+});
+
+// reset score
+resetBtn.addEventListener('click', () => {
+    score[win] = 0;
+    score[loose] = 0;
+    score[draw] = 0;
+    updateScore();
+    resultLabel.innerHTML = "";
 });

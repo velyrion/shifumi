@@ -99,6 +99,40 @@ section:nth-of-type(3) {
   font-weight: bold;
 }
 
+#resultat strong {
+  font-weight: 900;         /* plus gras que normal */
+  color: #ffd700;           /* doré pour bien ressortir */
+  text-shadow: 0 0 2px rgba(255, 215, 0, 0.7); /* effet lumineux */
+}
+
+/* === SECTION: BOUTON RESET === */
+section:last-of-type {
+  margin: 30px 0 50px;
+}
+
+#resetBtn {
+  background: linear-gradient(145deg, #4a90e2, #357ab8);
+  border: none;
+  border-radius: 12px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+}
+
+#resetBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 7px 15px rgba(0,0,0,0.5);
+  background: linear-gradient(145deg, #357ab8, #4a90e2);
+}
+
+#resetBtn:active {
+  transform: scale(0.95);
+}
+
 /* === FOOTER === */
 footer {
   margin-top: auto;
